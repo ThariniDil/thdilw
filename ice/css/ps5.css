@@ -1,0 +1,105 @@
+  body{
+        background-color: grey;
+    }
+
+    .panel-body {
+
+        height: 239px;
+        overflow: auto;
+    }
+    .page
+    {
+        float: right;
+        margin: 0;
+        padding: 0;
+    }
+    .page li
+    {
+        list-style: none;
+        display:inline-block;
+    }
+    .page li a, .current
+    {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: #8A8A8A;
+    }
+    .current
+    {
+        font-weight:bold;
+        color: #000;
+    }
+    .button
+    {
+        padding: 0px 0px;
+        text-decoration: none;
+        background: #333;
+        color: #F3F3F3;
+        font-size: 13PX;
+        border-radius: 2PX;
+        margin: 0 4PX;
+        display: block;
+        float: left;
+    }
+    .tp {
+
+        width: 13%;
+        height: 37px;
+    }
+    a.panel-heading {
+        display: block;
+    }
+    .panel-primary .panel-heading[aria-expanded="true"], .panel-primary .panel-heading a:hover, .panel-primary .panel-heading a:focus, .panel-primary a.panel-heading:hover, .panel-primary a.panel-heading:focus {
+        background-color: #286090;
+    }
+    .panel-danger .panel-heading[aria-expanded="true"], .panel-danger .panel-heading a:hover, .panel-danger .panel-heading a:focus, .panel-danger a.panel-heading:hover, .panel-danger a.panel-heading:focus {
+        background-color: #c9302c;
+    }
+    .panel-default .panel-heading[aria-expanded="true"], .panel-default .panel-heading a:hover, .panel-default .panel-heading a:focus, .panel-default a.panel-heading:hover, .panel-default a.panel-heading:focus {
+        background-color: #dcdcdc;
+    }
+    .panel-info .panel-heading[aria-expanded="true"], .panel-info .panel-heading a:hover, .panel-info .panel-heading a:focus, .panel-info a.panel-heading:hover, .panel-info a.panel-heading:focus {
+        background-color: #31b0d5;
+    }
+    .panel-success .panel-heading[aria-expanded="true"], .panel-success .panel-heading a:hover, .panel-success .panel-heading a:focus, .panel-success a.panel-heading:hover, .panel-success a.panel-heading:focus {
+        background-color: #449d44;
+    }
+    .panel-warning .panel-heading[aria-expanded="true"], .panel-warning .panel-heading a:hover, .panel-warning .panel-heading a:focus, .panel-warning a.panel-heading:hover, .panel-warning a.panel-heading:focus {
+        background-color: #ec971f;
+    }
+    .panel-group .panel, .panel-group .panel-heading {
+        border: none !important;
+    }
+    .panel-group .panel-body {
+        border: 1px solid #ddd !important;
+        border-width: 0 1px 1px 1px !important;
+       
+    }
+    .panel-group .panel-heading a, .panel-group a.panel-heading {
+        outline: 0;
+    }
+    .panel-group .panel-heading a:hover, .panel-group .panel-heading a:focus, .panel-group a.panel-heading:hover, .panel-group a.panel-heading:focus {
+        text-decoration: none;
+    }
+    .panel-group .panel-heading .icon-indicator {
+        margin-right: 10px;
+    }
+    .panel-group .panel-heading .icon-indicator:before {
+        content: "\e114";
+    }
+    .panel-group .panel-heading.collapsed .icon-indicator:before {
+        content: "\e080";
+    }
+
+    .turnintodropdown {
+        border: o;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        border-radius: 5px;
+        padding: 12px 15px;
+        background: #fff;
+    }
+

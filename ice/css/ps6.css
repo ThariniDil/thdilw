@@ -1,0 +1,53 @@
+ body{
+        background-color: grey;
+    }
+
+    .panel-default > .panel-heading {
+        background-color: #5cb85c
+    }
+ 
+    .panel-body {
+
+        height: 239px;
+        overflow: auto;
+    }
+    .page
+    {
+        float: right;
+        margin: 0;
+        padding: 0;
+    }
+    .page li
+    {
+        list-style: none;
+        display:inline-block;
+    }
+    .page li a, .current
+    {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        color: #8A8A8A;
+    }
+    .current
+    {
+        font-weight:bold;
+        color: #000;
+    }
+    .button
+    {
+        padding: 0px 0px;
+        text-decoration: none;
+        background: #333;
+        color: #F3F3F3;
+        font-size: 13PX;
+        border-radius: 2PX;
+        margin: 0 4PX;
+        display: block;
+        float: left;
+    }
+    .tp {
+
+        width: 13%;
+        height: 37px;
+    }
