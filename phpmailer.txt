@@ -1,0 +1,40 @@
+// Data received from POST request
+$name = stripcslashes($_POST['name']);
+$emailAddr = stripcslashes($_POST['email']);
+$issue = stripcslashes($_POST['issue']);
+$comment = stripcslashes($_POST['message']);
+$subject = stripcslashes($_POST['subject']);   
+
+// Send mail
+$mail = new PHPMailer();
+$mail->IsSMTP(); // telling the class to use SMTP
+
+// SMTP Configuration
+$mail->SMTPAuth = true;                  // enable SMTP authentication
+$mail->Host = "myhost"; // SMTP server
+$mail->Username = "yourusername@gmail.com";
+$mail->Password = "yourpassword";            
+//$mail->Port = 465; // optional if you don't want to use the default 
+
+$mail->From = "my@email.com";
+$mail->FromName = "My Name";
+$mail->Subject = $subject;
+$mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+$mail->MsgHTML($issue . "<br /><br />" . $comment);
+
+// Add as many as you want
+$mail->AddAddress($emailAddr, $name);
+
+// If you want to attach a file, relative path to it
+//$mail->AddAttachment("images/phpmailer.gif");             // attachment
+
+$response= NULL;
+if(!$mail->Send()) {
+    $response = "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    $response = "Message sent!";
+}
+
+$output = json_encode(array("response" => $response));  
+header('content-type: application/json; charset=utf-8');
+echo($output);
