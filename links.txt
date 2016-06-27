@@ -1,0 +1,3 @@
+http://www.tutorialspoint.com/php/php_sending_emails.htm       ->    mail function
+
+http://www.tutorialspoint.com/php/php_object_oriented.htm      -> function
