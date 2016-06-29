@@ -40,25 +40,40 @@ if(isset($_POST['submit'])) {
         $hash = md5(uniqid(rand(), true));
         $created_user = mysqli_query($con, "INSERT INTO `users`(`username`, `password`, `name`, `password_again`, `address`, `phone_no`, `date`, `month`, `year`, `sex`, `email`, `image`, `hash`) VALUES ('{$username}','{$password}','{$name}','{$password2}','{$address}','{$phoneno}','{$day}','{$month}','{$year}','{$sex}','{$email}','{$image}','{$hash}')");
         
-        if(!$created_user) {
-            
-            echo'Query failed';
-            
-        }
-        
-        if(mysqli_affected_rows($con) == 1){ //if the insert query was successful
-            
-           // send e-mail to ...
-            
-                $subject = 'Activate your email';
-            
-                $headers = "From: thariniwp@yahoo.com \r\n";
-                $headers .= "MIME-Version: 1.0\r\n";
- 
-                $message = " To activate your account, please click on this link:\n\n";
+       if($result){
+// ---------------- SEND MAIL FORM ----------------
 
-                $message .= WEBSITE_URL . '/verify.php?email=' . urlencode($email) . "&key=$hash";
-                mail($email, $subject, $headers, $message);
+// send e-mail to ...
+$to=$email;
+
+// Your subject
+$subject="Your confirmation link here";
+
+// From
+$header="from: your name <your email>";
+
+// Your message
+$message="Your Comfirmation link \r\n";
+$message.="Click on this link to activate your account \r\n";
+$message.="http://www.yourweb.com/confirmation.php?passkey=$confirm_code";
+
+// send email
+$sentmail = mail($to,$subject,$message,$header);
+}
+
+// if not found 
+else {
+echo "Not found your email in our database";
+}
+
+// if your email succesfully sent
+if($sentmail){
+echo "Your Confirmation link Has Been Sent To Your Email Address.";
+}
+else {
+echo "Cannot send Confirmation link to your e-mail address";
+}
+?>
             
            // var_dump($sentmail);
             
