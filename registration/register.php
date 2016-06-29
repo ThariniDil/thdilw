@@ -66,37 +66,7 @@ else {
 echo "Not found your email in our database";
 }
 
-// if your email succesfully sent
-if($sentmail){
-echo "Your Confirmation link Has Been Sent To Your Email Address.";
-}
-else {
-echo "Cannot send Confirmation link to your e-mail address";
-}
+
 ?>
             
-           // var_dump($sentmail);
-            
-            
-            echo'<div>A confirmation email has been sent to <b>'. $email .'</b> Please click on the Activate Button to Activate your account</div>';
-            
-
-            
-            
-            
-        } else { // If it did not run OK.
-            
-            echo'<div>You could not be registered due to a system error. We apologize for any inconvenience.</div>';
-            
-            
-            
-            
-        }
-        
-    }
-     else{
          
-         echo'<div>Email already registered</div>';
-     }
-    
-}
