@@ -1,12 +1,37 @@
 <?php
 include_once 'dbconn.php';
 $con = new DB_con();
-//$table = "users";
-$res=$con->select();
 
-//var_dump($res);
+// data insert code starts here.
+if(isset($_POST['btn-save']))
+{
+ $fname = $_POST['first_name'];
+ $lname = $_POST['last_name'];
+ $city = $_POST['city_name'];
+ 
+ $res=$con->insert($fname,$lname,$city);
+ if($res)
+ {
+  ?>
+  <script>
+  alert('Record inserted...');
+        window.location='index.php'
+        </script>
+  <?php
+ }
+ else
+ {
+  ?>
+  <script>
+  alert('error inserting record...');
+        window.location='index.php'
+        </script>
+  <?php
+ }
+}
+// data insert code ends here.
+
 ?>
-
 
 
 <!--
@@ -109,36 +134,25 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                 
                     </div>
                     <div class="panel-body" style="height: 606px;">
-<div id="body">
- <div id="content">
+    <form method="post">
     <table align="center">
     <tr>
-    <th colspan="3"><a href="adddata.php">add data here...</a></th>
+    <td><input type="text" name="first_name" placeholder="First Name" required /></td>
     </tr>
     <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>City</th>
+    <td><input type="text" name="last_name" placeholder="Last Name" required /></td>
     </tr>
-    <?php
- while($row=mysql_fetch_row($res))
- {
-   ?>
-            <tr>
-            <td><?php echo $row[1]; ?></td>
-            <td><?php echo $row[2]; ?></td>
-            <td><?php echo $row[3]; ?></td>
-            </tr>
-            <?php
- }
- ?>
+    <tr>
+    <td><input type="text" name="city_name" placeholder="City" required /></td>
+    </tr>
+    <tr>
+    <td>
+    <button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
+    </tr>
     </table>
-    </div>
-</div>
-
-
-
-   </div>
+    </form>
+  
+         </div>
                 </div>
             </div>
         </div>
@@ -150,8 +164,3 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src="js/jquery.vide.min.js"></script>
-
-
-    </body>
-</html>
-
