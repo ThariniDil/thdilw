@@ -1,3 +1,6 @@
+<?php
+include './config.php';
+?>
 
 
 <!--
@@ -95,7 +98,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
                 <div class="panel panel-default" style="position: relative; bottom: 197px;">
                     <div class="panel-heading">
-                        <h2 class="panel-center-heading">Student Registration</h2>
+                        <h2 class="panel-center-heading">Student Detials View</h2>
                  
                 
                     </div>
@@ -103,35 +106,71 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 
-  <form id="form" action="register.php" method="post">
+  
+                           <?php
+                          
+                               
 
 
-                              <fieldset>
-                                        <div class="form-group style-3" style="margin-left: 14px; position: relative; bottom: -40px;">
-                                            Name: <br /><input class="form-control" placeholder="Name" name="name" type="text" value="" style="width: 264px;" required>
-			    		</div>
-			    	  	
-			    		<div class="form-group style-3" style="margin-left: 14px; position: relative; bottom: -93px;">
-                                            Address: <br /><input class="form-control" placeholder="Address" name="address" type="text" value="" style="width: 264px;" required>
-			    		</div>
-                                        
-                                        <div class="form-group style-3" style="margin-left: 14px; position: relative; bottom: 33px;">
-                                            Phone No: <br /><input class="form-control" placeholder="Phone No" name="phoneno" type="text" value="" style="width: 264px;" required>
-			    		</div>
-                                        
-                                      
-                                       
-                                        
-                                       
-			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Submit" name="submit" style="width: 260px; margin-left: 373px; position: relative; bottom: -176px;">
-			    	</fieldset>
+                            $result = mysqli_query($con, "SELECT * FROM `users`");
+                            ?>                 
+
+                   
+
+                            <table cellpadding="0" cellspacing="0" border="1" id="table" class="table table-striped table-hover" style="white-space: nowrap;">
+                                <thead>
+                                    <tr>
+                                        <th style="font-weight: bold; width: 1%; text-align: center;">User ID</th>
+                                        <th style="font-weight: bold; width: 1%; text-align: center;">Name</th>
+                                        <th style="font-weight: bold; width: 1%; text-align: center;">Contact No</th>
+                                        <th style="font-weight: bold; width: 1%; text-align: center;">Address</th>
+                                     
+
+
+                                    </tr>
+                                </thead>
 
 
 
 
 
+<?php
+//var_dump($_POST);
+//die();            
+// $sql = ;
 
-                        </form>
+
+echo "<ul>";
+
+
+while ($record = mysqli_fetch_array($result)) {
+
+
+
+    echo"<tr>";
+    echo"<td style='text-align : center;'>" . $record['id'] . "</td>";
+    echo"<td style='text-align : center;'>" . $record['name'] . "</td>";
+    echo"<td style='text-align : center;'>" . $record['phone_no'] . "</td>";
+    echo"<td style='text-align : center;'>" . $record['address'] . "</td>";
+
+    echo"<td><a href=\"edit3.php?id=" . $record["id"] . "\">Edit</a></td>";
+
+
+
+    echo"</tr>";
+}
+
+
+echo "</ul>";
+?>
+
+                            </table>
+
+
+
+
+
+                       
 
          </div>
                 </div>
