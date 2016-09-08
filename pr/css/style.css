@@ -1,0 +1,113 @@
+<style type="text/css">
+p{
+	
+   
+	font-size: small;
+
+}
+.a1 {
+    color: #03A9F4;
+    font-family:sans-serif;
+    margin-right:5px	
+}		
+
+.p3{
+	color:gray;
+	font-family:sans-serif;
+	padding-left:3px;
+	text-align:justify;
+
+
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+    font-family:sans-serif;
+}
+
+nav {
+	color:gray;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+        padding-top: 5px;
+	font-family:sans-serif;
+}
+
+.nav{
+    padding-right: 55px;
+    padding-left: 55px;
+    display: inline-block;
+    height: 50px;
+    padding-top: 20px;
+    font-family:sans-serif;
+}
+
+.image{
+
+	position:relative;
+	width:100%;
+	lenght:100px;
+
+
+}
+.image-txt{
+
+    position: absolute;
+    top: 61px;
+    width: 277px;
+    margin-left: 66px;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+  }
+ input{
+ margin-bottom:10px; 
+ font-family:sans-serif;
+  padding-right: 20px; 
+  padding-left: 20px;
+ }
+
+
+	
+input#input3{
+	 
+         background-color:rgb(20, 121, 202);
+         color: #f7ecec;
+ 	
+        
+}
+input#input4{
+	
+	 background-color:rgb(20, 121, 202);
+      	color: #f7ecec;
+	
+
+}
+
+
+input[type="button"],input[type="button"]{
+  -moz-border-radius: 15px;
+ -webkit-border-radius: 15px;
+  font-family:corbal,sans-serif;
+  padding-right: 20px; 
+  padding-left: 
+ background-color:rgb(20, 121, 202);
+  color: #f7ecec;
+} 
+	
+	/*blue*/    
+
+label for{
+    font-family:corbel,sans-serif;
+    
+        
+}
+	
+li{
+list-style-type:none;
+font-family:sans-serif;
+}
+
+</style>
